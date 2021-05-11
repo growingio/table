@@ -25,11 +25,9 @@ node_modules
 dist
 assets/**/*.css
 build
-lib
 coverage
 yarn.lock
 package-lock.json
-es/
 .storybook
 .doc
 !tests/__mocks__/rc-util/lib

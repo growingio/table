@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ResizeObserver from 'rc-resize-observer';
+import { debounce } from 'lodash';
 
 export interface MeasureCellProps {
   columnKey: React.Key;
@@ -17,9 +18,9 @@ export default function MeasureCell({ columnKey, onColumnResize }: MeasureCellPr
 
   return (
     <ResizeObserver
-      onResize={({ offsetWidth }) => {
+      onResize={debounce(({ offsetWidth }) => {
         onColumnResize(columnKey, offsetWidth);
-      }}
+      }, 100)}
     >
       <td ref={cellRef} style={{ padding: 0, border: 0, height: 0 }}>
         <div style={{ height: 0, overflow: 'hidden' }}>&nbsp;</div>

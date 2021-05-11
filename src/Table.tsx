@@ -25,6 +25,7 @@
  */
 
 import * as React from 'react';
+import { debounce } from 'lodash';
 import isVisible from 'rc-util/lib/Dom/isVisible';
 import classNames from 'classnames';
 import shallowEqual from 'shallowequal';
@@ -757,7 +758,9 @@ function Table<RecordType extends DefaultRecordType>(props: TableProps<RecordTyp
   );
 
   if (horizonScroll) {
-    fullTable = <ResizeObserver onResize={onFullTableResize}>{fullTable}</ResizeObserver>;
+    fullTable = (
+      <ResizeObserver onResize={debounce(onFullTableResize, 100)}>{fullTable}</ResizeObserver>
+    );
   }
 
   const TableContextValue = React.useMemo(
