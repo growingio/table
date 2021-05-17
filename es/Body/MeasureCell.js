@@ -14,7 +14,7 @@ export default function MeasureCell(_ref) {
     onResize: debounce(function (_ref2) {
       var offsetWidth = _ref2.offsetWidth;
       onColumnResize(columnKey, offsetWidth);
-    }, 100)
+    }, 200)
   }, /*#__PURE__*/React.createElement("td", {
     ref: cellRef,
     style: {
