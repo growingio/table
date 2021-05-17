@@ -759,7 +759,7 @@ function Table<RecordType extends DefaultRecordType>(props: TableProps<RecordTyp
 
   if (horizonScroll) {
     fullTable = (
-      <ResizeObserver onResize={debounce(onFullTableResize, 100)}>{fullTable}</ResizeObserver>
+      <ResizeObserver onResize={debounce(onFullTableResize, 200)}>{fullTable}</ResizeObserver>
     );
   }
 
