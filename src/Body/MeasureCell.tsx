@@ -20,7 +20,7 @@ export default function MeasureCell({ columnKey, onColumnResize }: MeasureCellPr
     <ResizeObserver
       onResize={debounce(({ offsetWidth }) => {
         onColumnResize(columnKey, offsetWidth);
-      }, 100)}
+      }, 200)}
     >
       <td ref={cellRef} style={{ padding: 0, border: 0, height: 0 }}>
         <div style={{ height: 0, overflow: 'hidden' }}>&nbsp;</div>

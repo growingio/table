@@ -578,7 +578,7 @@ function Table(props) {
 
   if (horizonScroll) {
     fullTable = /*#__PURE__*/React.createElement(ResizeObserver, {
-      onResize: debounce(onFullTableResize, 100)
+      onResize: debounce(onFullTableResize, 200)
     }, fullTable);
   }
 
