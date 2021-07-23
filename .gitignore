@@ -33,6 +33,8 @@ package-lock.json
 !tests/__mocks__/rc-util/lib
 examples/debug.tsx
 .history
+es
+lib
 
 # umi
 .umi
