@@ -70,6 +70,8 @@ function HeaderRow<RecordType>({
             {...fixedInfo}
             additionalProps={additionalProps}
             rowType="header"
+            columnIndex={cellIndex}
+            columnKey={columnsKey[cellIndex]}
           />
         );
       })}

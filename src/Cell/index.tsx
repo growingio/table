@@ -63,6 +63,8 @@ export interface CellProps<RecordType extends DefaultRecordType> {
   rowType?: 'header' | 'body' | 'footer';
 
   isSticky?: boolean;
+  columnKey?: React.Key;
+  columnIndex?: number;
 }
 
 function Cell<RecordType extends DefaultRecordType>(
@@ -89,6 +91,8 @@ function Cell<RecordType extends DefaultRecordType>(
     align,
     rowType,
     isSticky,
+    columnIndex,
+    columnKey,
   }: CellProps<RecordType>,
   ref: React.Ref<any>,
 ): React.ReactElement {
@@ -203,6 +207,8 @@ function Cell<RecordType extends DefaultRecordType>(
     ),
     style: { ...additionalProps.style, ...alignStyle, ...fixedStyle, ...cellStyle },
     ref: isRefComponent(Component) ? ref : null,
+    columnIndex: columnIndex,
+    columnKey: columnKey,
   };
 
   return (

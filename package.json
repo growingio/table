@@ -1,6 +1,6 @@
 {
   "name": "@gio-design/table",
-  "version": "7.18.1-patch",
+  "version": "7.18.1.1",
   "description": "table ui component for react",
   "engines": {
     "node": ">=8.x"
